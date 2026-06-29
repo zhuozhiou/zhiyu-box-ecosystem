@@ -3,319 +3,39 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>知遇盒子 盒子生态 - 详细报告版</title>
+<title>知遇盒子 盒子生态 | 商业报告</title>
 <style>
-:root{--bg:#f4f7fb;--card:#fff;--ink:#102233;--muted:#5d6b7c;--line:#d8e2ee;--accent:#12395d;--accent2:#2a6ca3;--soft:#edf4fb;--soft2:#f8fbfe;--shadow:0 14px 36px rgba(16,34,51,.06)}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:linear-gradient(180deg,#eaf2fa 0,#f4f7fb 220px,#f4f7fb 100%);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;line-height:1.72}
-.page{max-width:1180px;margin:0 auto;padding:32px 22px 72px}.hero{border:1px solid var(--line);border-radius:30px;padding:42px;background:radial-gradient(circle at top right,#d7e8f8 0,#eff6fc 36%,#fff 100%);box-shadow:0 24px 60px rgba(18,57,93,.08)}
-.kicker{font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--accent2);font-weight:900}h1{margin:12px 0 8px;font-size:52px;line-height:1.06;letter-spacing:-.035em}.subtitle{font-size:18px;color:var(--muted);max-width:980px}
-.meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}.chip{background:#fff;border:1px solid var(--line);border-radius:999px;padding:8px 14px;font-size:13px;color:var(--accent);box-shadow:0 6px 18px rgba(16,34,51,.05)}
-.kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin:18px 0}.kpi{background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px;box-shadow:var(--shadow)}.kpi .label{font-size:12px;color:var(--muted);letter-spacing:.14em;text-transform:uppercase;font-weight:900}.kpi .value{font-size:26px;font-weight:950;color:var(--accent);margin-top:6px}
-.doc-title{display:none}.section{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:24px;margin-top:18px;box-shadow:var(--shadow)}.section h2{margin:0 0 12px;font-size:22px;color:var(--accent)}.section h3{margin:20px 0 8px;font-size:17px;color:#1d4c75}.section h4{margin:16px 0 6px;font-size:15px;color:#2a5f8d}p{margin:0 0 10px}ul{margin:8px 0 12px;padding:0;list-style:none}li{position:relative;padding-left:18px;margin:8px 0}li:before{content:"";position:absolute;left:0;top:.82em;width:8px;height:8px;border-radius:999px;background:linear-gradient(135deg,var(--accent2),#8fc5ff)}li.subitem{margin-left:18px;color:var(--muted)}
-.table-wrap{width:100%;overflow-x:auto;margin:12px 0 18px;border-radius:16px}table{min-width:760px;width:100%;border-collapse:separate;border-spacing:0;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#fff}th,td{padding:12px;border-bottom:1px solid var(--line);vertical-align:top;font-size:14px}th{background:var(--soft);text-align:left;color:var(--accent);font-size:13px}tr:last-child td{border-bottom:none}.divider{height:1px;background:var(--line);margin:18px 0}.footer{margin-top:20px;text-align:center;color:var(--muted);font-size:12px}
-@media(max-width:900px){.page{padding:16px}.hero,.section{padding:18px}h1{font-size:38px}.kpis{grid-template-columns:1fr 1fr}}@media(max-width:560px){.kpis{grid-template-columns:1fr}}
+:root{
+  --ink:#101828;--muted:#667085;--sub:#344054;--line:#d0d5dd;--paper:#fffdf8;--bg:#f5f7fb;
+  --navy:#102a43;--blue:#2563eb;--cyan:#06b6d4;--green:#10b981;--orange:#f97316;--red:#ef4444;
+  --gold:#c99700;--violet:#7c3aed;--card:#ffffff;--soft:#eef4ff;--cream:#fff8e8;
+  --shadow:0 22px 60px rgba(16,24,40,.10);--shadow2:0 10px 30px rgba(16,24,40,.08);
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);background:linear-gradient(180deg,#eef4ff 0,#f7f9fc 420px,#f7f9fc 100%);font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",Arial,sans-serif;line-height:1.68}
+a{color:inherit;text-decoration:none}.wrap{width:min(1180px,calc(100% - 40px));margin:0 auto}.topbar{position:sticky;top:0;z-index:20;backdrop-filter:blur(18px);background:rgba(255,255,255,.76);border-bottom:1px solid rgba(208,213,221,.7)}.topbar .inner{height:60px;display:flex;align-items:center;justify-content:space-between}.brand{font-weight:900;letter-spacing:.02em;color:var(--navy)}.nav{display:flex;gap:18px;font-size:13px;color:var(--muted)}.nav a:hover{color:var(--blue)}
+.hero{position:relative;overflow:hidden;padding:76px 0 54px}.hero:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 15% 18%,rgba(37,99,235,.18),transparent 34%),radial-gradient(circle at 85% 5%,rgba(249,115,22,.15),transparent 30%),linear-gradient(135deg,rgba(255,255,255,.9),rgba(255,255,255,.52));pointer-events:none}.hero-grid{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:36px;align-items:center}.eyebrow{display:inline-flex;gap:8px;align-items:center;border:1px solid rgba(37,99,235,.22);background:rgba(255,255,255,.8);color:var(--blue);font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;border-radius:999px;padding:8px 12px}.hero h1{font-size:72px;line-height:.98;letter-spacing:-.055em;margin:18px 0 16px;color:var(--navy)}.hero h1 span{display:block;background:linear-gradient(90deg,var(--navy),var(--blue),var(--cyan));-webkit-background-clip:text;background-clip:text;color:transparent}.lead{font-size:20px;line-height:1.75;color:#344054;max-width:680px}.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}.pill{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:999px;background:#fff;border:1px solid var(--line);box-shadow:0 8px 22px rgba(16,24,40,.06);font-size:13px;color:#344054}.hero-card{background:rgba(255,255,255,.82);border:1px solid rgba(208,213,221,.78);border-radius:30px;box-shadow:var(--shadow);padding:26px;position:relative;overflow:hidden}.hero-card:before{content:"";position:absolute;right:-80px;top:-80px;width:200px;height:200px;background:radial-gradient(circle,rgba(37,99,235,.22),transparent 68%)}.device{position:relative;border:1px solid #cbd5e1;border-radius:26px;background:linear-gradient(180deg,#111827,#1f2937);padding:18px;min-height:340px;color:white;box-shadow:inset 0 0 0 1px rgba(255,255,255,.06)}.device-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;color:#cbd5e1;font-size:12px}.lights{display:flex;gap:6px}.lights i{width:9px;height:9px;border-radius:50%;display:block}.screen-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.module{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:14px}.module b{display:block;font-size:15px}.module small{color:#aab6c8}.module.wide{grid-column:1/3;background:linear-gradient(135deg,rgba(37,99,235,.3),rgba(6,182,212,.18))}.section{padding:34px 0}.section-head{display:flex;justify-content:space-between;gap:24px;align-items:end;margin-bottom:18px}.label{font-size:12px;color:var(--blue);font-weight:900;letter-spacing:.18em;text-transform:uppercase}.section h2{font-size:38px;line-height:1.15;letter-spacing:-.035em;margin:6px 0;color:var(--navy)}.section-desc{max-width:640px;color:var(--muted);font-size:16px}.panel{background:var(--card);border:1px solid var(--line);border-radius:28px;padding:26px;box-shadow:var(--shadow2)}.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:18px}.kpi{padding:22px;border-radius:24px;border:1px solid #dbe4f0;background:linear-gradient(180deg,#fff,#f8fbff);box-shadow:var(--shadow2)}.kpi .num{font-size:38px;font-weight:950;color:var(--navy);letter-spacing:-.04em}.kpi .name{color:var(--muted);font-size:13px;font-weight:700}.kpi .note{font-size:12px;color:#98a2b3;margin-top:6px}.thesis{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}.thesis-card{border-radius:24px;padding:22px;background:#fff;border:1px solid var(--line);min-height:190px;position:relative;overflow:hidden}.thesis-card:after{content:attr(data-index);position:absolute;right:16px;bottom:-18px;font-size:92px;font-weight:950;color:rgba(37,99,235,.08);letter-spacing:-.08em}.thesis-card h3{margin:0 0 8px;font-size:20px;color:var(--navy)}.thesis-card p{margin:0;color:var(--muted)}.architecture{display:grid;grid-template-columns:1fr 1.05fr;gap:18px}.stack{display:flex;flex-direction:column;gap:12px}.layer{display:grid;grid-template-columns:150px 1fr;gap:14px;align-items:center;padding:16px;border-radius:20px;border:1px solid var(--line);background:linear-gradient(90deg,#fff,#f7fbff)}.layer b{color:var(--navy)}.layer span{color:var(--muted);font-size:14px}.matrix{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.box-card{border-radius:24px;padding:22px;color:white;min-height:240px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden}.box-card:before{content:"";position:absolute;right:-42px;top:-42px;width:130px;height:130px;border-radius:50%;background:rgba(255,255,255,.16)}.box-card h3{font-size:24px;margin:0 0 8px}.box-card p{margin:0;color:rgba(255,255,255,.86)}.box-card ul{margin:16px 0 0;padding:0;list-style:none}.box-card li{font-size:13px;margin:6px 0;color:rgba(255,255,255,.86)}.legal{background:linear-gradient(135deg,#12395d,#2563eb)}.content{background:linear-gradient(135deg,#7c3aed,#ec4899)}.cross{background:linear-gradient(135deg,#0f766e,#10b981)}.cards-list{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.mini{border-radius:20px;background:#fff;border:1px solid var(--line);padding:18px}.mini b{color:var(--navy)}.mini p{font-size:13px;color:var(--muted);margin:8px 0 0}.problem-card{border-radius:24px;background:#fff;border:1px solid var(--line);padding:22px}.problem-card .tag{display:inline-flex;border-radius:999px;background:var(--soft);color:var(--blue);font-size:12px;font-weight:900;padding:5px 10px}.problem-card h3{margin:14px 0 10px;color:var(--navy)}.problem-card ul{padding-left:18px;margin:0;color:var(--muted)}.market-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:18px}.market-number{border-radius:24px;padding:22px;background:linear-gradient(135deg,#102a43,#1d4ed8);color:#fff}.market-number .big{font-size:46px;font-weight:950;letter-spacing:-.05em}.market-number p{color:rgba(255,255,255,.78);margin:4px 0 0}.market-list{display:grid;gap:12px}.market-item{display:grid;grid-template-columns:120px 1fr;gap:14px;align-items:start;background:#fff;border:1px solid var(--line);border-radius:18px;padding:16px}.market-item b{color:var(--navy)}.market-item span{color:var(--muted);font-size:14px}.table-wrap{overflow-x:auto;border-radius:24px;border:1px solid var(--line);background:#fff;box-shadow:var(--shadow2)}table{width:100%;border-collapse:collapse;min-width:900px}th,td{padding:14px 16px;text-align:left;border-bottom:1px solid #e5e7eb;vertical-align:top;font-size:14px}th{background:#f1f5fb;color:var(--navy);font-size:13px;letter-spacing:.04em}tr:last-child td{border-bottom:none}.strong{font-weight:900;color:var(--navy)}.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.person{background:#fff;border:1px solid var(--line);border-radius:24px;padding:20px}.avatar{width:46px;height:46px;border-radius:16px;background:linear-gradient(135deg,var(--blue),var(--cyan));display:grid;place-items:center;color:white;font-weight:950;margin-bottom:12px}.person h3{margin:0;color:var(--navy);font-size:18px}.person .role{font-size:13px;color:var(--blue);font-weight:800;margin:4px 0 8px}.person p{font-size:13px;color:var(--muted);margin:0}.partners{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.partner{background:#fff;border:1px solid var(--line);border-radius:18px;padding:16px}.partner b{display:block;color:var(--navy);margin-bottom:4px}.partner span{font-size:13px;color:var(--muted)}.roadmap{display:grid;gap:14px}.road-row{display:grid;grid-template-columns:140px repeat(4,1fr);gap:10px}.road-cell{border-radius:18px;border:1px solid var(--line);background:#fff;padding:14px;font-size:13px;color:var(--muted)}.road-cell.time{background:var(--navy);color:#fff;font-weight:900}.road-cell b{display:block;color:var(--navy);font-size:13px;margin-bottom:6px}.road-cell.time b{color:#fff}.finance{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}.finance div{background:#fff;border:1px solid var(--line);border-radius:18px;padding:14px;text-align:center;font-size:13px;color:var(--muted)}.finance b{display:block;color:var(--navy);font-size:15px;margin-bottom:4px}.final{padding:48px;border-radius:32px;background:linear-gradient(135deg,#102a43,#1e3a8a,#2563eb);color:white;box-shadow:var(--shadow);position:relative;overflow:hidden}.final:after{content:"";position:absolute;right:-80px;top:-80px;width:260px;height:260px;border-radius:50%;background:rgba(255,255,255,.12)}.final h2{color:#fff;font-size:42px;margin:0 0 12px}.final p{max-width:780px;color:rgba(255,255,255,.82);font-size:18px}.footer{padding:34px 0 50px;text-align:center;color:#98a2b3;font-size:13px}.print-note{display:none}
+@media(max-width:980px){.hero-grid,.architecture,.market-grid,.grid-2{grid-template-columns:1fr}.grid-4,.cards-list,.team-grid,.partners,.finance{grid-template-columns:1fr 1fr}.grid-3,.matrix,.thesis{grid-template-columns:1fr}.hero h1{font-size:52px}.nav{display:none}.road-row{grid-template-columns:1fr}.section-head{display:block}}
+@media(max-width:620px){.wrap{width:min(100% - 24px,1180px)}.hero h1{font-size:42px}.grid-4,.cards-list,.team-grid,.partners,.finance{grid-template-columns:1fr}.hero{padding-top:42px}.section h2{font-size:30px}.road-cell{font-size:12px}}
+@media print{body{background:#fff}.topbar{display:none}.panel,.kpi,.section,.hero-card{box-shadow:none}.section{break-inside:avoid}.print-note{display:block}}
 </style>
 </head>
 <body>
-<div class="page">
-<section class="hero">
-  <div class="kicker">GitHub Pages / Detailed Report</div>
-  <h1>知遇盒子<br>盒子生态</h1>
-  <div class="subtitle">知遇知行（深圳）科技有限公司 - 面向高知识密度、强场景需求、具备支付能力行业用户的即插即用 AI 智能硬件终端产品。</div>
-  <div class="meta"><span class="chip">法务盒子</span><span class="chip">IP 内容盒子</span><span class="chip">跨境电商盒子</span><span class="chip">深圳创新创业大赛参赛稿</span><span class="chip">自动同步版</span></div>
-</section>
-<div class="kpis"><div class="kpi"><div class="label">总用户数</div><div class="value">568 户</div></div><div class="kpi"><div class="label">处理案件</div><div class="value">16,701 件</div></div><div class="kpi"><div class="label">Token 消费</div><div class="value">48,433 元</div></div><div class="kpi"><div class="label">省代</div><div class="value">3 个</div></div></div>
-<h1 class="doc-title">知遇盒子 盒子生态</h1>
-<p>知遇知行（深圳）科技有限公司</p>
-<section class="section" id="公司简介-参赛版"><h2>公司简介（参赛版）</h2>
-<p>知遇知行（深圳）科技有限公司是一家聚焦垂类AI智能硬件终端与行业智能化交付的科技公司，围绕“硬件盒子 + 垂类模型 + 数据闭环 + 渠道交付”构建可复制的产品体系。公司以法务盒子为首个验证样板，逐步延展至 IP 内容、跨境电商等高频刚需场景，形成面向高知识密度、强场景需求、具备支付能力的行业用户的盒子生态。公司具备 AI 产品研发、硬件集成、渠道交付与行业服务能力，致力于把复杂专业能力做成即插即用、可规模化、可持续扩张的智能硬件终端产品。</p>
-</section>
-<section class="section" id="项目简介-参赛版"><h2>项目简介（参赛版）</h2>
-<p>知遇盒子系列产品是一个面向高知识密度、强场景需求、具备支付能力的行业用户的即插即用AI智能硬件终端产品，核心是把通用 AI 能力沉淀为标准底座，再将法务、内容、跨境等高频刚需场景拆分为可交付的垂类盒子。项目以法务盒子完成首个商业化闭环验证，后续将复制到 IP 内容盒子、跨境电商盒子，并进一步拆分 TikTok 盒子、亚马逊盒子等更细分产品。项目通过硬件终端、本地安全、AI 工作流、知识中台和渠道交付体系，解决专业场景门槛高、数据不安全、使用不便、交付难复制等问题，具备真实用户、实际案例、可扩张路径与产业化价值。</p>
-</section>
-<section class="section" id="定位"><h2>定位</h2>
-<ul>
-<li>面向高知识密度、强场景需求、具备支付能力的行业用户的即插即用 AI 终端生态。</li>
-<li>用“硬件盒子 + 垂类模型 + 数据闭环 + 渠道交付”解决高频刚需问题。</li>
-<li>不是单一产品，而是一套可复用、可拆分、可持续扩张的盒子生态。</li>
-<li>首个已验证样板为法务盒子，后续可扩展至 IP 内容盒子、跨境电商盒子，并继续拆分 TikTok 盒子、亚马逊盒子等垂类产品。</li>
-</ul>
-</section>
-<section class="section" id="封面信息"><h2>封面信息</h2>
-<ul>
-<li>知遇盒子</li>
-<li>盒子生态</li>
-<li>AI 终端矩阵</li>
-<li>法务盒子</li>
-<li>IP 内容盒子</li>
-<li>跨境电商盒子</li>
-<li>深圳创新创业大赛参赛稿</li>
-<li>从单品到生态的垂类 AI 终端方案</li>
-<li>面向高知识密度、强场景需求、具备支付能力的行业用户的即插即用 AI 终端生态</li>
-<li>1 / 9</li>
-<li>演讲人：钟志坚</li>
-</ul>
-</section>
-<div class="divider"></div>
-<section class="section" id="产品介绍"><h2>产品介绍</h2>
-<h3>原页标题</h3>
-<p>PRODUCT OVERVIEW</p>
-<h3>产品介绍：知遇盒子 盒子生态</h3>
-<h3>底层共用能力</h3>
-<ul>
-<li>硬件终端：统一的 AI 盒子承载体，支持本地计算、即插即用、快速部署。</li>
-<li>本地数据处理：敏感数据不出端侧，保障隐私、安全与合规。</li>
-<li>AI 工作流：围绕“输入、处理、生成、复用、交付”建立标准化流程。</li>
-<li>知识库中台：统一沉淀法条、案例、脚本、选题、商品知识、运营知识等内容资产。</li>
-<li>账号与权限管理：支持个人、团队、企业、机构的分级使用与协作。</li>
-<li>渠道与交付体系：统一的培训、安装、售后、代理、服务交付能力。</li>
-<li>AI 创想者社区：公司自营的 AI 产品社区生态，既是开发型人才的输送池，也是产品市场测试池，同时承担代理、销售与生态扩散的入口功能。</li>
-</ul>
-<h3>上层垂类盒子</h3>
-<ul>
-<li>法务盒子：企业法务、律所、法院、检察院、电商商家的智能法务终端。</li>
-<li>IP 内容盒子：面向老板、个人 IP、内容团队，解决选题、脚本、内容生产与转化。</li>
-<li>跨境电商盒子：面向跨境卖家、品牌方、运营团队，解决选品、Listing、投放、客服、合规、申诉等问题。</li>
-<li>延展方向：TikTok 盒子、亚马逊盒子等更细分的垂类终端。</li>
-</ul>
-<h3>核心逻辑</h3>
-<ul>
-<li>将通用能力做成标准底座。</li>
-<li>将垂类需求做成可卖、可交付、可规模化的盒子产品。</li>
-<li>用一个底座支持多个场景，用多个场景反哺底座升级。</li>
-</ul>
-<h3>页码</h3>
-<ul>
-<li>2 / 9</li>
-</ul>
-</section>
-<div class="divider"></div>
-<section class="section" id="目前定制和销量情况"><h2>目前定制和销量情况</h2>
-<h3>原页标题</h3>
-<p>TRACTION</p>
-<h3>目前定制和销量情况</h3>
-<p>法务盒子已完成商业化闭环验证，是盒子生态的首个样板。</p>
-<ul>
-<li>产品已迭代至 3.3 版本，持续优化交付与使用体验。</li>
-<li>总用户数：568 户</li>
-<li>含盒子用户 270 + 研发律师 298</li>
-<li>处理案件：16,701 件</li>
-<li>累计处理案件量</li>
-<li>Token 消费：48,433 元</li>
-<li>累计 AI 消费金额</li>
-<li>法院合作试点</li>
-<li>6 月中旬与龙岗区人民法院达成智能法院合作，试点全国智能法院。</li>
-<li>重点解决法官文书、法条、案例等耗时痛点，提升立案效率与成功率。</li>
-<li>产品与市场状态</li>
-<li>法务盒子已成熟，验证了“硬件终端 + 垂类模型 + 渠道交付”的商业模式。</li>
-<li>省代已有三个（广东、安徽、浙江），其他团体、个人代理一百多人。</li>
-<li>未来将以法务盒子为样板，复制到内容与跨境场景。</li>
-</ul>
-<h3>生态层结论</h3>
-<ul>
-<li>不是只有一个产品在跑，而是已经跑通了一种可复制的方法。</li>
-<li>法务盒子负责验证信任、交付与合规能力，后续盒子负责复制增长。</li>
-<li>跨境电商盒子已具备来自拥有丰富跨境卖家资源的上市公司渠道合作，以及成熟技术合作支持。</li>
-<li>IP 内容盒子已具备成熟 AI SaaS 技术合作支持。</li>
-<li>在产品开发端，我们只与已经完成商业闭环、拥有真实大量付费用户、并具备成熟技术团队的 AI SaaS 产品合作；通过将其软件能力升级为本地智能硬件终端，再依托我们搭建的销售体系、营销体系与品牌体系进行横向放大。</li>
-<li>硬件作为标准化产品，具备更高的生态位势，能够覆盖并辐射日渐壮大的 AI 社区、OPC 社区、行业培训机构、线下 AI 展会、线上 AI 博主以及传统硬件分销渠道。</li>
-</ul>
-<h3>页码</h3>
-<ul>
-<li>3 / 9</li>
-</ul>
-</section>
-<div class="divider"></div>
-<section class="section" id="解决了什么问题"><h2>解决了什么问题</h2>
-<h3>原页标题</h3>
-<p>PROBLEM &amp; SOLUTION</p>
-<h3>盒子生态解决的三类高频刚需</h3>
-<h4>1. 法务合规刚需</h4>
-<ul>
-<li>企业法务、律所、法院、检察院、电商商家都需要高频处理法律问题。</li>
-<li>法务工作存在起草、审查、检索、比对、归档、申诉等重复性高、专业性强的任务。</li>
-<li>盒子化终端可以把复杂法务流程变成低门槛、可落地、可复用的工作流。</li>
-</ul>
-<h4>2. 内容生产刚需</h4>
-<ul>
-<li>老板、个人 IP、内容团队需要持续输出高质量内容。</li>
-<li>选题、脚本、标题、排版、发布、转化是高频且标准化的工作。</li>
-<li>IP 内容盒子可以把内容生产变成一台可交付的终端能力。</li>
-</ul>
-<h4>3. 跨境经营刚需</h4>
-<ul>
-<li>跨境卖家和品牌方需要处理选品、上架、投放、客服、申诉、合规等一整套链路。</li>
-<li>跨语言、跨平台、跨规则的复杂性高，工具链长，付费意愿强。</li>
-<li>跨境电商盒子可将经营流程终端化、标准化、自动化。</li>
-</ul>
-<h3>生态价值</h3>
-<ul>
-<li>终端化：把复杂业务做成即插即用的产品。</li>
-<li>标准化：把经验变成工作流，把工作流变成模块。</li>
-<li>可复制：一个底座可以支持多种垂类场景。</li>
-<li>可扩张：场景越多，数据越多，底座越强。</li>
-</ul>
-<h3>页码</h3>
-<ul>
-<li>4 / 9</li>
-</ul>
-</section>
-<div class="divider"></div>
-<section class="section" id="市场机会"><h2>市场机会</h2>
-<h3>原页标题</h3>
-<p>MARKET OPPORTUNITY</p>
-<h3>市场调查及未来展望</h3>
-<p>从单赛道 TAM 到生态化扩张，聚焦最确定性、最高付费意愿的垂类场景。</p>
-<h3>市场规模</h3>
-<h4>法务盒子市场</h4>
-<ul>
-<li>2025E TAM 全法律服务：3,680 亿</li>
-<li>诉前法律服务：1,987 亿，占 TAM 的 54%</li>
-<li>目标客户数量：约 60 万</li>
-<li>政府法制部门、社区服务站：约 25.2 万</li>
-</ul>
-<h4>生态扩张市场</h4>
-<ul>
-<li>IP 内容盒子对应的AI 内容生产与营销自动化赛道。QuestMobile 数据显示，2025 年中国互联网广告市场规模达 7930.8 亿元；品牌营销、内容生成、IP 增长与广告投放正在加速 AI 化，内容服务与营销自动化需求持续扩张。</li>
-<li>跨境盒子对应的跨境电商 AI SaaS 与运营服务赛道。艾媒咨询数据显示，2023 年中国品牌电商服务行业市场规模为 4077.1 亿元，预计 2028 年将达 5862.3 亿元；品牌出海、跨境运营、合规、投放与申诉等服务需求持续增长。</li>
-<li>TikTok / 亚马逊等海外平台场景：内容、投流、运营、申诉、合规需求高频存在。</li>
-</ul>
-<h3>关键洞察</h3>
-<ul>
-<li>国内已有 AI 工具与 SaaS 产品，但缺少以“终端盒子 + 垂类模型 + 交付体系”切入的生态型产品。</li>
-<li>法务盒子证明了本地部署与高合规场景的可行性。</li>
-<li>内容盒子与跨境盒子可承接更大规模的流量入口和交易场景。</li>
-<li>盒子生态的收入来源包括：硬件收入、年费收入、Token 收入、培训收入、服务收入、广告收入与延伸服务收入。</li>
-<li>国内高消费能力用户对 AI 软件的付费意愿整体偏保守，但对智能硬件终端的接受度更高，往往会将其视为企业基础设施与生产力工具。</li>
-<li>这意味着“硬件终端化”更容易形成明确的采购理由、预算归属与组织共识，也更适合规模化落地。</li>
-</ul>
-<h3>页码</h3>
-<ul>
-<li>5 / 9</li>
-</ul>
-</section>
-<div class="divider"></div>
-<section class="section" id="竞品分析"><h2>竞品分析</h2>
-<h3>原页标题</h3>
-<p>COMPETITIVE ANALYSIS</p>
-<h3>竞品全景分析</h3>
-<p>横向对比主流软件产品、私有化方案与通用大模型，盒子生态的优势在于终端化、垂类化与可复制。</p>
-<h3>对比维度</h3>
-<div class="table-wrap"><table>
-<thead><tr><th>对比维度</th><th>知遇盒子 盒子生态</th><th>SaaS 类产品</th><th>私有化部署</th><th>通用大模型</th></tr></thead>
-<tbody>
-<tr><td>代表</td><td>知遇盒子 / 法务盒子 / 内容盒子 / 跨境盒子</td><td>各类云端工具</td><td>本地服务器方案</td><td>通用模型 API</td></tr>
-<tr><td>形态</td><td>硬件终端 + 垂类模型 + 交付体系</td><td>云端软件</td><td>重实施方案</td><td>无硬件载体</td></tr>
-<tr><td>数据安全</td><td>★★★★★ 本地可控</td><td>★★☆☆☆ 云端风险</td><td>★★★★☆ 成本高</td><td>★★☆☆☆ 易外传</td></tr>
-<tr><td>使用门槛</td><td>★★★★★ 即插即用</td><td>★★★☆☆ 需配置</td><td>★☆☆☆☆ 需专业团队</td><td>★★★★☆ 简单但泛化</td></tr>
-<tr><td>合规性</td><td>★★★★★ 适配强监管场景</td><td>★★☆☆☆ 风险较高</td><td>★★★★☆ 可控</td><td>★☆☆☆☆ 不适用</td></tr>
-<tr><td>成本</td><td>千元级/台，门槛低</td><td>持续订阅</td><td>50-200 万，成本高</td><td>按量计费不可控</td></tr>
-<tr><td>护城河</td><td>★★★★★ 硬件 + 软件 + 渠道 + 数据闭环</td><td>★★☆☆☆ 易复制</td><td>★★★☆☆ 技术壁垒</td><td>★★☆☆☆ 无明显壁垒</td></tr>
-</tbody></table></div>
-<h3>竞品最大短板 ①</h3>
-<p>SaaS 产品容易受制于数据安全、跨境合规与场景深度，难以覆盖强监管行业和高敏感场景。</p>
-<h3>竞品最大短板 ②</h3>
-<p>私有化部署成本高、周期长、维护重，不适合中小企业和高频迭代场景。</p>
-<h3>竞品最大短板 ③</h3>
-<p>通用大模型虽强，但缺乏终端载体、垂类交付与场景闭环，难以形成稳定的业务结果。</p>
-<h3>页码</h3>
-<ul>
-<li>6 / 9</li>
-</ul>
-</section>
-<div class="divider"></div>
-<section class="section" id="核心团队"><h2>核心团队</h2>
-<h3>原页标题</h3>
-<p>TEAM</p>
-<h3>核心团队介绍</h3>
-<p>团队具备 AI、大模型、硬件、渠道、交付与产业资源整合能力，能够支撑从单盒子到多盒子矩阵的扩张。</p>
-<div class="table-wrap"><table>
-<thead><tr><th>角色</th><th>头衔</th><th>画像 / 能力 / 背景</th></tr></thead>
-<tbody>
-<tr><td>段起阳博士</td><td>创始人 / CEO</td><td>市场 · 技术 · 法律；前华为海外市场负责人、阿里现任海外市场负责人；中国人工智能发展应用中心</td></tr>
-<tr><td>吴逸英律师</td><td>联合创始人 / CTO</td><td>AI · 大模型 · 边缘计算；广东航皓律师事务所合伙人</td></tr>
-<tr><td>俞正津博士</td><td>联合创始人 / CTO</td><td>前阿里头部 AI 大厂高级研究员；参与千亿蚂蚁金服参数大模型训练；持有 AI 相关专利 3 项</td></tr>
-<tr><td>George（欧倬志）</td><td>联合创始人 / CTO</td><td>北交大本科，美国 Top50 高校 NEU 商业分析硕士，全国百强线路板厂二代，AI 创想者社区 CEO</td></tr>
-<tr><td>Yuli（陈裕玲）</td><td>CBO</td><td>哥大教育学毕业，AI+教育+地产跨领域创业者、人才孵化投资人。专注系统化创新商业教育生态服务的开发，致力于打造更适合当下AI时代，年轻创业者的非标孵化器。</td></tr>
-<tr><td>-</td><td>HW 硬件负责人</td><td>嵌入式 · 供应链 · 硬件；前华为嵌入式研发工程师；现任中科新型材料组负责人；主导过多款智能终端从 0 到 1 量产</td></tr>
-<tr><td>-</td><td>BD 商务拓展负责人</td><td>政企渠道 · 大客户销售；在政府、金融、国企有深厚客户关系网络；已谈定政府客户、律所、省代理等渠道</td></tr>
-</tbody></table></div>
-<h3>团队能力总结</h3>
-<ul>
-<li>既懂产品，也懂交付。</li>
-<li>既懂硬件，也懂 AI。</li>
-<li>既懂渠道，也懂政企合作。</li>
-<li>既能做法务盒子，也能复制到内容盒子与跨境盒子。</li>
-</ul>
-<h3>页码</h3>
-<ul>
-<li>7 / 9</li>
-</ul>
-</section>
-<div class="divider"></div>
-<section class="section" id="已合作商家"><h2>已合作商家</h2>
-<h3>原页标题</h3>
-<p>TEAM | 已合作商家介绍  &amp; 产业规划</p>
-<h3>合作伙伴</h3>
-<ul>
-<li>1，品牌策划执行推广：采纳品牌策划增长</li>
-<li>2，专利及指导：中科院深圳先进院人工智能所</li>
-<li>3，全栈技术开发合作：快盒（青岛）科技、深圳市极客跳动</li>
-<li>4，线上宣传推广营销：云科 AI 公司</li>
-<li>5，算力、大数据与端侧服务：腾讯、阿里云、北大法宝</li>
-<li>6，硬件供应商：深圳奥博电脑</li>
-<li>7，上市辅导：宏业集团</li>
-<li>8，专利申请及政府类目补贴：奥瑞科技</li>
-<li>9，融资（意向合作中）：宏业集团、天使母、中科先进产业基金、大米资本等等</li>
-</ul>
-<h3>生态协同网络</h3>
-<ul>
-<li>研发合作：支撑 AI、硬件与产品能力迭代。</li>
-<li>渠道合作：支撑政企、代理与行业分销。</li>
-<li>内容合作：支撑 IP 内容盒子与品牌传播。</li>
-<li>算力合作：支撑模型训练与端侧能力。</li>
-<li>资本合作：支撑生态扩张与产品矩阵复制。</li>
-<li>政策合作：支撑创新创业、税收与就业导向。</li>
-</ul>
-<h3>正在筹建</h3>
-<ul>
-<li>1，人工智能公司（在中科院孵化）</li>
-<li>2，技术出口软件公司（福田河套孵化）</li>
-<li>3，科技公司（龙岗，地点暂定，核心是政务人工智能技术服务）</li>
-</ul>
-<h3>页码</h3>
-<ul>
-<li>8 / 9</li>
-</ul>
-</section>
-<div class="divider"></div>
-<section class="section" id="融资规划及企业发展规划"><h2>融资规划及企业发展规划</h2>
-<h3>原页标题</h3>
-<p>ROADMAP</p>
-<h3>融资规划及企业发展规划</h3>
-<p>清晰的执行节奏，每个里程碑对应明确的融资与增长杠杆。</p>
-<h3>路线图</h3>
-<div class="table-wrap"><table>
-<thead><tr><th>时间</th><th>总公司线</th><th>法务盒子线</th><th>IP 内容盒子线</th><th>跨境电商盒子线</th></tr></thead>
-<tbody>
-<tr><td>2025 Q3-Q4（已完成）</td><td>确立“盒子生态”总体战略；完成公司主体、品牌口径与统一底座雏形</td><td>MVP 与内测；核心模型调优完成；硬件原型机 v0.9 落地；3 家种子用户内测；核心专利申请提交</td><td>完成赛道调研、合作筛选与产品定义；建立成熟 AI SaaS 合作方筛选标准；完成产品原型和首轮需求验证；</td><td>完成赛道调研、合作筛选与产品定义；建立成熟 AI SaaS 合作方筛选标准；完成产品原型和首轮需求验证；</td></tr>
-<tr><td>2026 Q1-Q2（进行中）</td><td>统一硬件底座、知识库、账号体系、售后体系、培训体系；搭建销售、营销、品牌三大中台</td><td>天使轮·量产准备；完成天使轮融资；硬件量产版 v1.0；等保三级认证申请；首批 1000-4000 台商业化交付</td><td>进入产品联调与试点准备；建立样板客户池、渠道池、试点反馈机制；完成首批内容生产、脚本生成、发布链路联调；首批商业化交付 10-30 台；沉淀首批可量化的内容生产效率与线索转化数据</td><td>进入产品联调与试点准备；建立样板客户池、渠道池、试点反馈机制；完成首批选品、Listing、投放、客服、合规、申诉链路联调；首批商业化交付 10-30 台；沉淀首批可量化的运营提效与合规响应数据</td></tr>
-<tr><td>2026 Q3-Q4（规模起量）</td><td>通过销售体系、营销体系、品牌体系横向放大；进入 AI 社区、OPC 社区、培训机构、线下 AI 展会、线上 AI 博主及传统硬件分销渠道</td><td>累计出货 10 万台；建立行业渠道体系；启动 A 轮融资；政府试点项目落地</td><td>完成试点落地；形成内容生产、IP 增长、营销转化的一体化交付能力；开始规模化渠道铺设；累计出货 100-300 台；形成可量化的内容生产与成交数据；围绕 2025 年中国互联网广告市场 7930.8 亿元的上位市场，放大内容终端渗透</td><td>完成试点落地；形成选品、Listing、投放、客服、合规、申诉的一体化交付能力；开始规模化渠道铺设；累计出货 100-300 台；形成可量化的经营提效数据；围绕 2023 年中国品牌电商服务市场 4077.1 亿元、2028 年 5862.3 亿元的服务市场放大渗透</td></tr>
-<tr><td>2027 全年</td><td>在统一底座上建立“垂类盒子矩阵”；形成跨行业、跨渠道、跨地域的持续扩张能力</td><td>出货破 30 万台；进入律所连锁市场；发布盒子 v2.0；海外（中国香港）试水</td><td>拆分更细分的内容相关产品，形成多场景矩阵；持续沉淀内容资产、用户转化与代理扩散能力；累计出货 10000-30000 台；形成多渠道、多社区、多合作伙伴的复利增长</td><td>拆分更细分的跨境相关产品，形成多场景矩阵；持续沉淀运营资产、用户转化与代理扩散能力；累计出货 10000-30000 台；形成多渠道、多商家、多服务商的复利增长</td></tr>
-<tr><td>2028-2030（B 轮+）</td><td>构建统一底座、多场景复用、持续迭代的知遇盒子生态；推动平台化开放</td><td>累计出货 60 万台+；ARR 超 70 亿元；申报科创板/北交所；平台化生态开放</td><td>形成成熟产品矩阵与生态协同能力；累计出货 50 万台+；ARR 超 60 亿元</td><td>形成成熟产品矩阵与生态协同能力；累计出货 90 万台+；ARR 超 100 亿元</td></tr>
-<tr><td>最终目标</td><td>构建统一底座、多场景复用、持续迭代的知遇盒子生态</td><td>成为法务垂类智能硬件终端标杆</td><td>成为内容生产与 IP 增长的标准化终端</td><td>成为跨境经营效率工具的标准化终端</td></tr>
-</tbody></table></div>
-<h3>融资逻辑</h3>
-<ul>
-<li>资金主要用于硬件迭代、模型优化、渠道建设、交付体系、品牌传播与生态复制。</li>
-<li>融资不是为单一产品续命，而是为盒子生态的规模化扩张提供燃料。</li>
-</ul>
-<h3>页码</h3>
-<ul>
-<li>9 / 9</li>
-</ul>
-</section>
-<div class="footer">知遇盒子 盒子生态 · GitHub Pages 自动同步版 · 更新来源：Obsidian Markdown</div>
-</div>
+<header class="topbar"><div class="wrap inner"><div class="brand">知遇盒子 · 盒子生态</div><nav class="nav"><a href="#overview">概览</a><a href="#product">产品</a><a href="#traction">进展</a><a href="#market">市场</a><a href="#team">团队</a><a href="#roadmap">规划</a></nav></div></header>
+<main>
+<section class="hero" id="overview"><div class="wrap hero-grid"><div><div class="eyebrow">AI Hardware Terminal Ecosystem</div><h1>知遇盒子<span>盒子生态</span></h1><p class="lead">知遇盒子系列产品是面向高知识密度、强场景需求、具备支付能力行业用户的即插即用 AI 智能硬件终端产品。以法务盒子为首个商业化样板，复制至 IP 内容、跨境电商与更细分的平台经营场景。</p><div class="hero-actions"><span class="pill">深圳创新创业大赛参赛稿</span><span class="pill">硬件盒子 + 垂类模型</span><span class="pill">数据闭环 + 渠道交付</span><span class="pill">演讲人：钟志坚</span></div></div><div class="hero-card"><div class="device"><div class="device-head"><span>Zhiyu Box OS</span><div class="lights"><i style="background:#ef4444"></i><i style="background:#f59e0b"></i><i style="background:#22c55e"></i></div></div><div class="screen-grid"><div class="module wide"><b>统一 AI 终端底座</b><small>本地安全 · 知识中台 · 工作流引擎 · 权限管理</small></div><div class="module"><b>法务盒子</b><small>文书 / 法条 / 案例 / 申诉</small></div><div class="module"><b>IP 内容盒子</b><small>选题 / 脚本 / 发布 / 转化</small></div><div class="module"><b>跨境盒子</b><small>选品 / Listing / 投放 / 合规</small></div><div class="module"><b>社区渠道</b><small>AI 创想者社区 / 代理 / 培训</small></div></div></div></div></div></section>
+<section class="section"><div class="wrap grid-4"><div class="kpi"><div class="name">总用户数</div><div class="num">568 户</div><div class="note">盒子用户 270 + 研发律师 298</div></div><div class="kpi"><div class="name">累计处理案件</div><div class="num">16,701 件</div><div class="note">法务场景已验证高频使用</div></div><div class="kpi"><div class="name">Token 消费</div><div class="num">48,433 元</div><div class="note">累计 AI 消费金额</div></div><div class="kpi"><div class="name">渠道基础</div><div class="num">3 省代</div><div class="note">广东、安徽、浙江 + 百余代理</div></div></div></section>
+<section class="section"><div class="wrap"><div class="section-head"><div><div class="label">Executive Thesis</div><h2>不是一个盒子，而是一套可复制的行业 AI 终端方法</h2></div><p class="section-desc">知遇盒子把成熟 AI SaaS 能力、行业知识资产和线下交付体系，封装成可部署、可购买、可复制的智能硬件终端。</p></div><div class="thesis"><div class="thesis-card" data-index="01"><h3>用法务盒子验证信任</h3><p>强合规、高敏感、高频刚需场景先跑通，验证本地部署、行业工作流和渠道交付能力。</p></div><div class="thesis-card" data-index="02"><h3>用内容与跨境复制增长</h3><p>将已验证底座复制到内容生产、IP 增长、跨境经营、平台运营等更大流量和交易场景。</p></div><div class="thesis-card" data-index="03"><h3>用硬件提升采购确定性</h3><p>硬件更容易形成预算归属、组织共识和基础设施采购理由，比单纯 AI 软件更适合规模化落地。</p></div></div></div></section>
+<section class="section" id="product"><div class="wrap"><div class="section-head"><div><div class="label">Product Architecture</div><h2>统一底座 + 垂类盒子矩阵</h2></div><p class="section-desc">底层能力统一沉淀，上层场景按行业拆分，每个垂类盒子都可以独立销售、独立交付、独立规模化。</p></div><div class="architecture"><div class="panel stack"><div class="layer"><b>硬件终端</b><span>统一 AI 盒子承载体，支持本地计算、即插即用、快速部署。</span></div><div class="layer"><b>本地数据处理</b><span>敏感数据不出端侧，保障隐私、安全与合规。</span></div><div class="layer"><b>AI 工作流</b><span>围绕输入、处理、生成、复用、交付建立标准流程。</span></div><div class="layer"><b>知识库中台</b><span>沉淀法条、案例、脚本、选题、商品知识、运营知识。</span></div><div class="layer"><b>权限与渠道</b><span>支持团队协作、培训、安装、售后、代理和服务交付。</span></div><div class="layer"><b>AI 创想者社区</b><span>开发型人才输送池、市场测试池、代理销售与生态扩散入口。</span></div></div><div class="matrix"><div class="box-card legal"><div><h3>法务盒子</h3><p>企业法务、律所、法院、检察院、电商商家的智能法务终端。</p></div><ul><li>合同起草 / 审查</li><li>法条案例检索</li><li>文书生成 / 申诉</li></ul></div><div class="box-card content"><div><h3>IP 内容盒子</h3><p>面向老板、个人 IP、内容团队，解决内容生产与转化。</p></div><ul><li>选题 / 标题 / 脚本</li><li>排版 / 发布</li><li>营销转化</li></ul></div><div class="box-card cross"><div><h3>跨境电商盒子</h3><p>面向跨境卖家、品牌方、运营团队，覆盖经营全链路。</p></div><ul><li>选品 / Listing</li><li>投放 / 客服</li><li>合规 / 申诉</li></ul></div></div></div></div></section>
+<section class="section" id="traction"><div class="wrap"><div class="section-head"><div><div class="label">Traction</div><h2>首个样板已完成商业化闭环验证</h2></div><p class="section-desc">法务盒子已迭代至 3.3 版本，并形成用户、案件、Token 消费、法院试点与代理渠道的综合验证。</p></div><div class="grid-2"><div class="panel"><h3>已验证事实</h3><div class="cards-list"><div class="mini"><b>版本</b><p>产品已迭代至 3.3，持续优化交付与使用体验。</p></div><div class="mini"><b>法院试点</b><p>6 月中旬与龙岗区人民法院达成智能法院合作。</p></div><div class="mini"><b>模式验证</b><p>验证“硬件终端 + 垂类模型 + 渠道交付”的商业模式。</p></div><div class="mini"><b>复制基础</b><p>未来以法务盒子为样板，复制到内容与跨境场景。</p></div></div></div><div class="panel"><h3>生态层结论</h3><ul><li>不是只有一个产品在跑，而是跑通了一种可复制的方法。</li><li>法务盒子负责验证信任、交付与合规能力，后续盒子负责复制增长。</li><li>跨境电商盒子具备上市公司渠道合作及成熟技术合作支持。</li><li>IP 内容盒子已具备成熟 AI SaaS 技术合作支持。</li></ul></div></div></div></section>
+<section class="section"><div class="wrap"><div class="section-head"><div><div class="label">Problem & Solution</div><h2>三类高频刚需，构成盒子生态的产品入口</h2></div></div><div class="grid-3"><div class="problem-card"><span class="tag">法务合规刚需</span><h3>专业强、重复高、合规敏感</h3><ul><li>企业法务、律所、法院、检察院、电商商家高频处理法律问题。</li><li>起草、审查、检索、比对、归档、申诉等任务重复且专业。</li><li>盒子化终端把复杂法务流程变成可复用工作流。</li></ul></div><div class="problem-card"><span class="tag">内容生产刚需</span><h3>持续输出与转化压力</h3><ul><li>老板、个人 IP、内容团队需要持续输出高质量内容。</li><li>选题、脚本、标题、排版、发布、转化高度标准化。</li><li>内容盒子把内容生产变成可交付终端能力。</li></ul></div><div class="problem-card"><span class="tag">跨境经营刚需</span><h3>链路长、规则多、工具碎</h3><ul><li>跨境卖家需处理选品、上架、投放、客服、申诉、合规。</li><li>跨语言、跨平台、跨规则复杂性高，付费意愿强。</li><li>跨境盒子将经营流程终端化、标准化、自动化。</li></ul></div></div></div></section>
+<section class="section" id="market"><div class="wrap"><div class="section-head"><div><div class="label">Market Opportunity</div><h2>从法务单赛道 TAM 到生态化横向扩张</h2></div><p class="section-desc">聚焦确定性高、付费意愿强、工具链复杂的垂类场景，以硬件终端化降低采购阻力。</p></div><div class="market-grid"><div class="market-number"><div class="big">3,680 亿</div><p>2025E 全法律服务 TAM</p><hr style="border:none;border-top:1px solid rgba(255,255,255,.25);margin:18px 0"><div class="big" style="font-size:34px">1,987 亿</div><p>诉前法律服务，占 TAM 54%</p></div><div class="market-list"><div class="market-item"><b>法务盒子市场</b><span>目标客户约 60 万；政府法制部门、社区服务站约 25.2 万。</span></div><div class="market-item"><b>AI 内容生产</b><span>QuestMobile 数据显示，2025 年中国互联网广告市场规模达 7930.8 亿元，内容服务与营销自动化需求持续扩张。</span></div><div class="market-item"><b>跨境服务赛道</b><span>艾媒咨询数据显示，2023 年中国品牌电商服务市场 4077.1 亿元，预计 2028 年达 5862.3 亿元。</span></div><div class="market-item"><b>海外平台场景</b><span>TikTok / 亚马逊等平台在内容、投流、运营、申诉、合规方面存在高频需求。</span></div></div></div></div></section>
+<section class="section" id="competition"><div class="wrap"><div class="section-head"><div><div class="label">Competitive Analysis</div><h2>盒子生态的优势在于终端化、垂类化与交付闭环</h2></div></div><div class="table-wrap"><table><thead><tr><th>对比维度</th><th>知遇盒子生态</th><th>SaaS 类产品</th><th>私有化部署</th><th>通用大模型</th></tr></thead><tbody><tr><td>形态</td><td class="strong">硬件终端 + 垂类模型 + 交付体系</td><td>云端软件</td><td>重实施方案</td><td>无硬件载体</td></tr><tr><td>数据安全</td><td class="strong">★★★★★ 本地可控</td><td>★★☆☆☆ 云端风险</td><td>★★★★☆ 成本高</td><td>★★☆☆☆ 易外传</td></tr><tr><td>使用门槛</td><td class="strong">★★★★★ 即插即用</td><td>★★★☆☆ 需配置</td><td>★☆☆☆☆ 需专业团队</td><td>★★★★☆ 简单但泛化</td></tr><tr><td>合规性</td><td class="strong">★★★★★ 适配强监管场景</td><td>★★☆☆☆ 风险较高</td><td>★★★★☆ 可控</td><td>★☆☆☆☆ 不适用</td></tr><tr><td>成本</td><td class="strong">千元级/台，门槛低</td><td>持续订阅</td><td>50-200 万，成本高</td><td>按量计费不可控</td></tr><tr><td>护城河</td><td class="strong">硬件 + 软件 + 渠道 + 数据闭环</td><td>易复制</td><td>技术壁垒但交付重</td><td>无明显场景壁垒</td></tr></tbody></table></div></div></section>
+<section class="section" id="team"><div class="wrap"><div class="section-head"><div><div class="label">Team</div><h2>AI、大模型、硬件、渠道与产业资源的复合型团队</h2></div></div><div class="team-grid"><div class="person"><div class="avatar">段</div><h3>段起阳博士</h3><div class="role">创始人 / CEO</div><p>市场 · 技术 · 法律；前华为海外市场负责人、阿里现任海外市场负责人；中国人工智能发展应用中心。</p></div><div class="person"><div class="avatar">吴</div><h3>吴逸英律师</h3><div class="role">联合创始人 / CTO</div><p>AI · 大模型 · 边缘计算；广东航皓律师事务所合伙人。</p></div><div class="person"><div class="avatar">俞</div><h3>俞正津博士</h3><div class="role">联合创始人 / CTO</div><p>前阿里头部 AI 大厂高级研究员；参与千亿蚂蚁金服参数大模型训练；持有 AI 相关专利 3 项。</p></div><div class="person"><div class="avatar">G</div><h3>George（欧倬志）</h3><div class="role">联合创始人 / CTO</div><p>北交大本科，NEU 商业分析硕士，全国百强线路板厂二代，AI 创想者社区 CEO。</p></div><div class="person"><div class="avatar">Y</div><h3>Yuli（陈裕玲）</h3><div class="role">CBO</div><p>哥大教育学毕业，AI+教育+地产跨领域创业者、人才孵化投资人，专注系统化创新商业教育生态服务。</p></div><div class="person"><div class="avatar">BD</div><h3>硬件与商务负责人</h3><div class="role">HW / BD</div><p>覆盖嵌入式、供应链、智能终端量产、政企渠道、大客户销售与省代拓展。</p></div></div></div></section>
+<section class="section" id="partners"><div class="wrap"><div class="section-head"><div><div class="label">Ecosystem Network</div><h2>合作伙伴覆盖研发、渠道、内容、算力、资本与政策</h2></div></div><div class="partners"><div class="partner"><b>采纳品牌策划增长</b><span>品牌策划执行推广</span></div><div class="partner"><b>中科院深圳先进院人工智能所</b><span>专利及指导</span></div><div class="partner"><b>快盒（青岛）科技 / 深圳市极客跳动</b><span>全栈技术开发合作</span></div><div class="partner"><b>云科 AI 公司</b><span>线上宣传推广营销</span></div><div class="partner"><b>腾讯 / 阿里云 / 北大法宝</b><span>算力、大数据与端侧服务</span></div><div class="partner"><b>深圳奥博电脑</b><span>硬件供应商</span></div><div class="partner"><b>宏业集团</b><span>上市辅导 / 融资意向</span></div><div class="partner"><b>奥瑞科技</b><span>专利申请及政府类目补贴</span></div><div class="partner"><b>中科先进产业基金 / 大米资本等</b><span>融资意向合作中</span></div></div></div></section>
+<section class="section" id="roadmap"><div class="wrap"><div class="section-head"><div><div class="label">Roadmap</div><h2>总公司线 + 三条盒子产品线并行推进</h2></div><p class="section-desc">清晰的执行节奏，每个里程碑对应明确的融资与增长杠杆。</p></div><div class="roadmap"><div class="road-row"><div class="road-cell time">时间</div><div class="road-cell"><b>总公司线</b></div><div class="road-cell"><b>法务盒子线</b></div><div class="road-cell"><b>IP 内容盒子线</b></div><div class="road-cell"><b>跨境电商盒子线</b></div></div><div class="road-row"><div class="road-cell time">2025 Q3-Q4<br>已完成</div><div class="road-cell">确立盒子生态战略；完成公司主体、品牌口径与统一底座雏形。</div><div class="road-cell">MVP 与内测；模型调优；硬件原型机 v0.9；3 家种子用户；核心专利申请。</div><div class="road-cell">完成赛道调研、合作筛选、产品定义、原型和首轮需求验证。</div><div class="road-cell">完成赛道调研、合作筛选、产品定义、原型和首轮需求验证。</div></div><div class="road-row"><div class="road-cell time">2026 Q1-Q2<br>进行中</div><div class="road-cell">统一硬件底座、知识库、账号、售后、培训体系；搭建销售、营销、品牌三大中台。</div><div class="road-cell">天使轮·量产准备；v1.0；等保三级认证申请；首批 1000-4000 台商业化交付。</div><div class="road-cell">产品联调与试点；样板客户池、渠道池、反馈机制；首批商业化交付 10-30 台。</div><div class="road-cell">完成选品、Listing、投放、客服、合规、申诉链路联调；首批商业化交付 10-30 台。</div></div><div class="road-row"><div class="road-cell time">2026 Q3-Q4<br>规模起量</div><div class="road-cell">进入 AI 社区、OPC 社区、培训机构、AI 展会、AI 博主及传统硬件分销渠道。</div><div class="road-cell">累计出货 10 万台；建立行业渠道；启动 A 轮融资；政府试点项目落地。</div><div class="road-cell">累计出货 100-300 台；形成内容生产、IP 增长、营销转化一体化交付能力。</div><div class="road-cell">累计出货 100-300 台；形成经营提效数据，放大跨境服务市场渗透。</div></div><div class="road-row"><div class="road-cell time">2027 全年</div><div class="road-cell">建立垂类盒子矩阵，形成跨行业、跨渠道、跨地域持续扩张能力。</div><div class="road-cell">出货破 30 万台；进入律所连锁市场；发布盒子 v2.0；香港试水。</div><div class="road-cell">拆分内容相关产品；累计出货 10000-30000 台；形成复利增长。</div><div class="road-cell">拆分跨境相关产品；累计出货 10000-30000 台；形成多商家、多服务商增长。</div></div><div class="road-row"><div class="road-cell time">2028-2030<br>B 轮+</div><div class="road-cell">统一底座、多场景复用、持续迭代；推动平台化开放。</div><div class="road-cell">累计出货 60 万台+；ARR 超 70 亿元；申报科创板/北交所。</div><div class="road-cell">累计出货 50 万台+；ARR 超 60 亿元。</div><div class="road-cell">累计出货 90 万台+；ARR 超 100 亿元。</div></div></div></div></section>
+<section class="section"><div class="wrap"><div class="section-head"><div><div class="label">Use of Funds</div><h2>融资不是为单一产品续命，而是为生态复制提供燃料</h2></div></div><div class="finance"><div><b>硬件迭代</b>终端稳定性与体验</div><div><b>模型优化</b>垂类能力与知识中台</div><div><b>渠道建设</b>代理、省代、政企合作</div><div><b>交付体系</b>培训、安装、售后</div><div><b>品牌传播</b>参赛、招商、合作认知</div><div><b>生态复制</b>多盒子矩阵扩张</div></div></div></section>
+<section class="section"><div class="wrap"><div class="final"><h2>从单品到生态的垂类 AI 终端方案</h2><p>知遇盒子生态的核心价值，是把复杂专业能力做成即插即用、可规模化、可持续扩张的智能硬件终端产品；以法务盒子验证，以内容与跨境盒子放大，最终形成统一底座、多场景复用、持续迭代的盒子矩阵。</p></div></div></section>
+</main>
+<footer class="footer">知遇盒子 盒子生态 · 商业报告演示版 · GitHub Pages</footer>
 </body>
 </html>
